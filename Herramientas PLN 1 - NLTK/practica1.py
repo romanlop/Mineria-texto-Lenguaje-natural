@@ -83,7 +83,7 @@ for (tok,tag) in tagged[1]: # lo hacemos para una de las frases taggeadas
     if tok=='n\'t':
         tok = 'not'
     tag = tag[:1]
-    lemma = lemmatizer.lemmatize(tok.lower(),wnTags.get(tag,wordnet.NOUN))
+    lemma = lemmatizer.lemmatize(tok.lower(),wnTags.get(tag,wordnet.NOUN)) #wordnet.NOUN se pone para que devuelva algo por defecto
     #otra forma alternativa de obtener el lema hubiera sido llamar directamente a la funcion wordnet.morphy, que hace lo mismo:
     #lemma = wordnet.morphy(tok.lower(),wnTags.get(tag,wordnet.NOUN))
     if lemma is None: #Si wordnet no contiene la palabra, supondremos que el lema es igual al token
