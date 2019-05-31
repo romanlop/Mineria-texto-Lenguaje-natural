@@ -45,7 +45,7 @@ talk.politics.misc
 talk.religion.misc
 """
 
-cat = ['alt.atheism','sci.space']
+cat = ['rec.sport.hockey','rec.sport.baseball']
 print("Loading 20 newsgroups dataset for categories:")
 dataset = fetch_20newsgroups(subset='all', categories=cat,
                              shuffle=True, random_state=42)
@@ -64,7 +64,7 @@ X = vectorizer.fit_transform(dataset.data)
 print("n_samples: %d, n_features: %d" % X.shape)
 
 #Usamos KMEANS para el Clustering
-km = KMeans(n_clusters=4, init='k-means++', max_iter=100, n_init=1)
+km = KMeans(n_clusters=2, init='k-means++', max_iter=100, n_init=1)
 km.fit(X)
 
 #Mostramos los clústers
